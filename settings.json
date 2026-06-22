@@ -1,0 +1,5 @@
+{
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": "${workspaceFolder}/ignore_cmake",
+    "C_Cpp.intelliSenseEngine": "Tag Parser"
+}

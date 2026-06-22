@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>AUX Управление</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+    <!-- ==================== Header ==================== -->
+    <header class="header">
+        <div class="header-title" >AUXILIUM</div>
+        <div class="connection-indicator">
+            <span id="connectionText">Поиск...</span>
+            <div class="dot disconnected" id="connectionDot"></div>
+        </div>
+    </header>
+
+    <!-- ==================== Main ==================== -->
+    <main class="main">
+    <div class="content">
+        <!-- Вкладки -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="manual">Ручное</button>
+            <button class="tab-btn" data-tab="auto">Авто</button>
+        </div>
+        
+        <!-- ==================== Вкладка "Ручное" ==================== -->
+        <div class="tab-content active" id="tab-manual">
+            
+            <!-- Напряжение батареи -->
+            <div class="battery-panel" id="batteryPanel">
+                <div class="battery-icon">🔋</div>
+                <div class="battery-info">
+                    <div class="battery-voltage" id="batteryVoltage">--.- V</div>
+                    <div class="battery-label">Напряжение</div>
+                </div>
+                <div class="battery-bar-container">
+                    <div class="battery-bar" id="batteryBar" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Переключатель режимов -->
+            <div class="mode-selector" id="modeSelector">
+                <button class="mode-btn active" data-mode="tank">Танк</button>
+                <button class="mode-btn" data-mode="omni">Омни</button>
+            </div>
+            
+            <!-- Джойстик управления -->
+            <div class="control-panel" id="controlPanel">
+                <button class="ctrl-btn btn-Q" id="btnQ">Q ↺</button>
+                <button class="ctrl-btn btn-W" id="btnW">W ▲</button>
+                <button class="ctrl-btn btn-E" id="btnE">E ↻</button>
+                <button class="ctrl-btn btn-A" id="btnA">A ◄</button>
+                <button class="ctrl-btn btn-STOP" id="btnStop">СТОП</button>
+                <button class="ctrl-btn btn-D" id="btnD">D ►</button>
+                <div></div>
+                <button class="ctrl-btn btn-S" id="btnS">S ▼</button>
+                <div></div>
+            </div>
+            
+            <!-- Слайдер скорости -->
+            <div class="speed-panel">
+                <span class="speed-label">Скорость</span>
+                <input type="range" class="speed-slider" id="speedSlider" 
+                       min="0.3" max="0.9" step="0.3" value="0.6">
+                <span class="speed-value" id="speedValue">60%</span>
+            </div>
+            
+            <!-- PWM индикаторы -->
+            <div class="pwm-display" id="pwmDisplay">
+                <div class="pwm-item">
+                    <div class="pwm-value" id="pwmValue1">0</div>
+                    <div class="pwm-label">Мотор 1</div>
+                    <div class="pwm-bar"><div class="pwm-bar-fill" id="pwmBar1" style="width: 50%"></div></div>
+                </div>
+                <div class="pwm-item">
+                    <div class="pwm-value" id="pwmValue2">0</div>
+                    <div class="pwm-label">Мотор 2</div>
+                    <div class="pwm-bar"><div class="pwm-bar-fill" id="pwmBar2" style="width: 50%"></div></div>
+                </div>
+                <div class="pwm-item">
+                    <div class="pwm-value" id="pwmValue3">0</div>
+                    <div class="pwm-label">Мотор 3</div>
+                    <div class="pwm-bar"><div class="pwm-bar-fill" id="pwmBar3" style="width: 50%"></div></div>
+                </div>
+                <div class="pwm-item">
+                    <div class="pwm-value" id="pwmValue4">0</div>
+                    <div class="pwm-label">Мотор 4</div>
+                    <div class="pwm-bar"><div class="pwm-bar-fill" id="pwmBar4" style="width: 50%"></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ==================== Вкладка "Авто" ==================== -->
+        <div class="tab-content" id="tab-auto">
+            <div class="auto-panel">
+                
+                <!-- ===== СЕКЦИЯ: Камера и зрение ===== -->
+                <div class="section-header">
+                    <span class="section-icon">📷</span>
+                    <span class="section-title">Камера и зрение</span>
+                    <span class="camera-status" id="cameraStatus">Не запущена</span>
+                </div>
+                
+                <div class="camera-controls">
+                    <button class="auto-btn camera" id="btnCameraStart">▶ Открыть камеру</button>
+                    <button class="auto-btn camera" id="btnCameraStop" disabled>⏹ Закрыть</button>
+                </div>
+                
+                <div class="camera-info" id="cameraInfo" style="display: none;">
+                    <div class="info-row">
+                        <span>FPS:</span>
+                        <span id="cameraFps">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Поза:</span>
+                        <span id="cameraPose">Ожидание...</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Маркер:</span>
+                        <span id="cameraMarker">--</span>
+                    </div>
+                </div>
+                
+                <hr class="divider">
+                
+                <!-- ===== СЕКЦИЯ: Траектория ===== -->
+                <div class="section-header">
+                    <span class="section-icon">✏️</span>
+                    <span class="section-title">Траектория</span>
+                </div>
+                
+                <!-- Кнопка рисования -->
+                
+                
+                <div class="custom-info">
+                    <p>Рисуйте траекторию в окне камеры:</p>
+                    <ul>
+                        <li><strong>Левый клик</strong> — добавить точку</li>
+                        <li><strong>Правый клик</strong> — очистить</li>
+                        <li><strong>Клавиша S</strong> — сохранить и поехать</li>
+                    </ul>
+                </div>
+                
+                <hr class="divider">
+                
+                <!-- ===== СЕКЦИЯ: Движение ===== -->
+                <div class="section-header">
+                    <span class="section-icon">🚗</span>
+                    <span class="section-title">Движение</span>
+                    <span class="motion-status" id="motionStatus">Остановлен</span>
+                </div>
+                
+                <div class="motion-controls">
+                    <button class="auto-btn start" id="autoStart" disabled>▶ Старт</button>
+                    <button class="auto-btn pause" id="autoPause" disabled>⏸ Пауза</button>
+                    <button class="auto-btn stop" id="autoStop" disabled>⏹ Стоп</button>
+                </div>
+                
+                <!-- Слайдер скорости для авто -->
+                <div class="speed-panel auto-speed">
+                    <span class="speed-label">Скорость авто</span>
+                    <input type="range" class="speed-slider" id="autoSpeedSlider" 
+                           min="0.2" max="0.8" step="0.1" value="0.4">
+                    <span class="speed-value" id="autoSpeedValue">40%</span>
+                </div>
+                
+                <!-- Статус движения -->
+                <div class="auto-status" id="autoStatus">
+                    <div class="status-indicator stopped" id="statusIndicator"></div>
+                    <div class="status-details">
+                        <div class="status-text" id="statusText">Готов к запуску</div>
+                        <div class="error-info" id="errorInfo"></div>
+                        <div class="progress-bar-container" id="progressContainer" style="display: none;">
+                            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                            <span class="progress-text" id="progressText">0%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="divider">
+                
+                <!-- ===== СЕКЦИЯ: График ===== -->
+                <div class="section-header">
+                    <span class="section-icon">📊</span>
+                    <span class="section-title">График траектории</span>
+                    <button class="small-btn" id="btnClearPath" disabled>🗑️ Очистить</button>
+                    <button class="small-btn" id="btnSaveGraph">💾 Сохранить</button>
+                </div>
+                
+                <!-- График траектории -->
+                <div class="trajectory-plot" id="trajectoryPlot">
+                    <canvas id="trajectoryCanvas" width="400" height="300" 
+                            style="width:100%; height:auto; background: #111; border-radius: 8px; border: 1px solid #333;"></canvas>
+                    <div class="plot-legend">
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #baa98f;"></span> План
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #27ae60;"></span> Факт
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #0f0;"></span> Робот
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #ff0;"></span> Цель
+                        </span>
+                    </div>
+                    <div class="plot-coords">
+                        <span>X: <span id="trajX">--</span></span>
+                        <span>Y: <span id="trajY">--</span></span>
+                        <span>θ: <span id="trajTheta">--</span>°</span>
+                        <span>V: <span id="trajSpeed">--</span></span>
+                    </div>
+                </div>
+                
+                <!-- Заглушка -->
+                <div id="trajectoryPlaceholder" style="text-align: center; color: var(--text2); padding: 30px;">
+                    <div style="font-size: 48px;">📷</div>
+                    <div>Откройте камеру для начала работы</div>
+                    <div style="font-size: 11px; margin-top: 8px;">Затем выберите траекторию и нажмите Старт</div>
+                </div>
+            </div>
+        </div>
+    </div>                            
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
