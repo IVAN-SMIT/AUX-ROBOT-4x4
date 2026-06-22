@@ -28,7 +28,7 @@
 ---
 
 ## 📁 Структура проекта
-
+---
 bobr_wifi/
 ├── client/ # Управляющий код (Python)
 │ ├── proxy.py # FastAPI-сервер, WebSocket ↔ TCP прокси
@@ -47,10 +47,10 @@ bobr_wifi/
 ├── docs/ # Документация и скриншоты
 ├── README.md # Этот файл
 └── LICENSE # Лицензия MIT
-text
-
 
 ---
+
+
 
 ## 🚀 Быстрый старт
 
