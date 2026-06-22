@@ -31,22 +31,17 @@
 ```
 bobr_wifi/
 ├── client/ # Управляющий код (Python)
-│ ├── proxy.py # FastAPI-сервер, WebSocket ↔ TCP прокси
-│ ├── planner.py # Планировщик траекторий (Turn-and-Go)
-│ ├── visual_odometry.py # Визуальная одометрия (OpenCV)
-│ ├── config.py # Единый конфигурационный файл
-│ ├── launcher.py # Лаунчер (Flask) — точка входа
-│ ├── static/ # Веб-интерфейс
-│ │ ├── index.html
-│ │ ├── css/style.css
-│ │ └── js/main.js
-│ ├── graphs/ # Сохранённые графики траекторий
-│ └── requirements.txt # Python-зависимости
-├── esp32/ # Прошивка ESP32
-│ └── main.cpp # C++ код для ESP32
-├── docs/ # Документация и скриншоты
-├── README.md # Этот файл
-└── LICENSE # Лицензия MIT
+   ├── proxy.py # FastAPI-сервер, WebSocket ↔ TCP прокси
+   ├── planner.py # Планировщик траекторий (Turn-and-Go)
+   ├── visual_odometry.py # Визуальная одометрия (OpenCV)
+   ├── config.py # Единый конфигурационный файл
+   ├── launcher.py # Лаунчер (Flask) — точка входа
+   ├── static/ # Веб-интерфейс
+   │ ├── index.html
+   │ ├── css/style.css
+   │ └── js/main.js
+   ├── graphs/ # Сохранённые графики траекторий
+   └── requirements.txt # Python-зависимости
 ```
 
 ---
