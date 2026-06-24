@@ -134,11 +134,20 @@ python launcher.py
 
 
 
-    Окно визуальной одометрии: docs/odometry_window.png
-
-    Веб-интерфейс: docs/web_interface.png
-
-##График траектории: 
+## Окно визуальной одометрии: docs/odometry_window.png
 <p align="center">
-  <img src="docs/trajectory_plot.png" alt="График траектории" width="600">
+  <img src="docs/odometry_window.png" alt="Окно визуальной одометрии" width="600">
 </p>
+
+## Веб-интерфейс:
+<p align="center">
+  <img src="docs/web_interface.png" alt="Веб-интерфейс" width="600">
+</p>
+
+## График траектории: 
+<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+  <img src="docs/trajectory_plot1.png" alt="График 1" width="300">
+  <img src="docs/trajectory_plot2.png" alt="График 2" width="300">
+  <img src="docs/trajectory_plot3.png" alt="График 3" width="300">
+</div>
+
