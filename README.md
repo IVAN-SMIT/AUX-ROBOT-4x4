@@ -7,11 +7,11 @@
 Проект четырёхколёсного робота на базе **ESP32**, способного автономно перемещаться по заданной траектории. Позиционирование осуществляется с помощью **компьютерного зрения** — веб-камера отслеживает специальный маркер на корпусе.
 
 <p align="center">
-  <img src="docs/IMG_20260624_030622_061.png" alt="AUX-ROBOT-4x4" width="600">
+  <img src="docs/IMG_20260624_030622_061.png" alt="AUX-ROBOT-4x4 3d model" width="600">
 </p>
 
 <p align="center">
-  <img src="docs/IMG_20260624_030622_061.jpg" alt="AUX-ROBOT-4x4 model" width="600">
+  <img src="docs/IMG_20260623_032546.jpg" alt="AUX-ROBOT-4x4" width="600">
 </p>
 
 ---
