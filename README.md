@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/IM.jpg" alt="AUX-ROBOT-4x4 model" width="600">
+  <img src="docs/IMG_20260624_030622_061.jpg" alt="AUX-ROBOT-4x4 model" width="600">
 </p>
 
 ---
