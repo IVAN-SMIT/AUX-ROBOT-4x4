@@ -10,6 +10,10 @@
   <img src="docs/IMG_20260623_032546.jpg" alt="AUX-ROBOT-4x4" width="600">
 </p>
 
+<p align="center">
+  <img src="docs/IM.jpg" alt="AUX-ROBOT-4x4 model" width="600">
+</p>
+
 ---
 
 ## 🔧 Возможности
