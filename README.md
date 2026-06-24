@@ -145,9 +145,10 @@ python launcher.py
 </p>
 
 ## График траектории: 
-<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-  <img src="docs/trajectory_plot1.png" alt="График 1" width="300">
-  <img src="docs/trajectory_plot2.png" alt="График 2" width="300">
-  <img src="docs/trajectory_plot3.png" alt="График 3" width="300">
+<div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+  <img src="docs/trajectory_plot1.png" alt="График 1" style="height: 250px; object-fit: contain;">
+  <img src="docs/trajectory_plot2.png" alt="График 2" style="height: 250px; object-fit: contain;">
+  <img src="docs/trajectory_plot3.png" alt="График 3" style="height: 250px; object-fit: contain;">
 </div>
+
 
