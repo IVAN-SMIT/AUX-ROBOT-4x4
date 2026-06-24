@@ -138,7 +138,7 @@ python launcher.py
 
     Веб-интерфейс: docs/web_interface.png
 
-###График траектории: 
+##График траектории: 
 <p align="center">
-  <img src="docs/trajectory_plot.jpg" alt="AUX-ROBOT-4x4" width="600">
+  <img src="docs/trajectory_plot.png" alt="График траектории" width="600">
 </p>
