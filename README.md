@@ -141,10 +141,13 @@ python launcher.py
 
 ## Веб-интерфейс:
 <p align="center">
-  <img src="docs/web_interface.png" alt="Веб-интерфейс" width="600">
+  <img src="docs/web_interface1.png" alt="Веб-интерфейс" width="600">
+</p>
+<p align="center">
+  <img src="docs/web_interface2.png" alt="Веб-интерфейс" width="600">
 </p>
 
-## График траектории: 
+## Графики траектории: 
 <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
   <img src="docs/trajectory_plot1.png" alt="График 1" style="height: 250px; object-fit: contain;">
   <img src="docs/trajectory_plot2.png" alt="График 2" style="height: 250px; object-fit: contain;">
